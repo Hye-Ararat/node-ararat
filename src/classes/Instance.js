@@ -1,9 +1,15 @@
+const Monitor = require("./Instance/Monitor");
+const Console = require("./Instance/Console");
 class Instance {
     /**
      * 
      * @param {import('./Client')} self 
      */
     constructor(self, data) {
+        /**
+         * @private
+         */
+        this._client = self;
         this.id = data._id;
         this.name = data.name;
         this.node = data.node;
@@ -22,6 +28,13 @@ class Instance {
         this.type = data.type;
         this.users = data.users;
         if (data.relationships) this.relationships = data.relationships;
+    }
+
+    monitor() {
+        return new Monitor(this._client, this);
+    }
+    console() {
+        return new Console(this._client, this);
     }
 }
 module.exports = Instance;
