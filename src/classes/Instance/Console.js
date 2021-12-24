@@ -15,7 +15,7 @@ class Console {
         if (this._client.api != "admin") throw new Error("You can't use this method in client API");
         return new Promise(async (resolve, reject) => {
             try {
-                await post(`${this._client.url}/api/v1/admin/servers/${this.instance.id}/console/verify`, {
+                await post(`${this._client.url}/api/v1/admin/instances/${this.instance.id}/console/verify`, {
                     access_token: token
                 },{
                     headers: {

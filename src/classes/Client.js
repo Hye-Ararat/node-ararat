@@ -30,7 +30,7 @@ class Client {
     instance(instanceId, include) {
         return new Promise(async (resolve, reject) => {
             try {
-                var server_data = await get(`${this.url}/api/v1/${this.api}/servers/${instanceId}` + (include ? `?include=${include}` : ""), {
+                var instance_data = await get(`${this.url}/api/v1/${this.api}/instances/${instanceId}` + (include ? `?include=${include}` : ""), {
                     headers: {
                         "Authorization": `Bearer ${this.apiKey}`
                     }
@@ -38,8 +38,8 @@ class Client {
             } catch (error) {
                 return reject(error);
             }
-            server_data = server_data.data;
-            return resolve(new Instance(this, server_data))
+            instance_data = instance_data.data;
+            return resolve(new Instance(this, instance_data))
         })
     }
 }
