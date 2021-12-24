@@ -1,8 +1,8 @@
 {
-  "name": "ararat-node",
-  "version": "0.0.1",
+  "name": "ararat",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "src/classes/Client.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
