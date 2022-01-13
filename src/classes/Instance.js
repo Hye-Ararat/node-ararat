@@ -14,16 +14,23 @@ class Instance {
         this.name = data.name;
         this.node = data.node;
         this.magma_cube = {
-            cube: data.magma_cube.cube,
-            image_group: data.magma_cube.image_group,
-            image_index: data.magma_cube.image_index,
+            cube: data.magma_cube.id,
+            image: data.magma_cube.image,
         };
         this.network = data.network;
-        this.env = data.env;
+        this.environment = data.environment;
         this.limits = {
-            cpu: data.limits.cpu,
-            memory: data.limits.memory,
-            disk: data.limits.disk
+            cpu: {
+                limit: data.limits.cpu.limit,
+                priority:  data.limits.cpu.priority,
+            },
+            memory: {
+                limit: data.limits.memory.limit,
+                enforce: data.limits.memory.enforce
+            },
+            disk: {
+                priority: data.limits.disk.priority,
+            }
         },
         this.type = data.type;
         this.users = data.users;
