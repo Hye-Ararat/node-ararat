@@ -1,5 +1,5 @@
 const Monitor = require("./Instance/Monitor");
-const Console = require("./Instance/Console");
+const Console = require("./Instance/Console")
 class Instance {
     /**
      * 
@@ -22,7 +22,7 @@ class Instance {
         this.limits = {
             cpu: {
                 limit: data.limits.cpu.limit,
-                priority:  data.limits.cpu.priority,
+                priority: data.limits.cpu.priority,
             },
             memory: {
                 limit: data.limits.memory.limit,
@@ -32,7 +32,7 @@ class Instance {
                 priority: data.limits.disk.priority,
             }
         },
-        this.type = data.type;
+            this.type = data.type;
         this.users = data.users;
         if (data.relationships) this.relationships = data.relationships;
     }

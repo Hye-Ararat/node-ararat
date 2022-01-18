@@ -13,7 +13,7 @@ class Monitor {
          * @private
          * @type {import("../Instance")}
         */
-       this.instance = instance;
+        this.instance = instance;
     }
     verify(token) {
         return true;

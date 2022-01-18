@@ -1,4 +1,4 @@
-const {post} = require("axios")
+const { post } = require("axios")
 class Console {
     constructor(client, instance) {
         /**
@@ -17,7 +17,7 @@ class Console {
             try {
                 await post(`${this._client.url}/api/v1/admin/instances/${this.instance.id}/console/verify`, {
                     access_token: token
-                },{
+                }, {
                     headers: {
                         "Authorization": `Bearer ${this._client.apiKey}`,
                     }
