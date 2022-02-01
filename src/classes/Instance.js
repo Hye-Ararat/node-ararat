@@ -1,5 +1,6 @@
 const Monitor = require("./Instance/Monitor");
 const Console = require("./Instance/Console")
+const Backup = require("./Instance/Backup");
 class Instance {
     /**
      * 
@@ -42,6 +43,9 @@ class Instance {
     }
     console() {
         return new Console(this._client, this);
+    }
+    backup(backup) {
+        return new Backup(this._client, this, backup);
     }
 }
 module.exports = Instance;
